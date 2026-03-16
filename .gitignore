@@ -1,0 +1,23 @@
+# Data files - too large for GitHub
+data/
+*.csv
+*.zip
+
+# DuckDB warehouse file
+*.duckdb
+
+# Python
+__pycache__/
+*.pyc
+.env
+de-project-env
+
+# dbt
+dbt_project/target/
+dbt_project/logs/
+dbt_project/.user.yml
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+*.pid
