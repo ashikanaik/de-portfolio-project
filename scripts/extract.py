@@ -12,7 +12,7 @@ def upload_to_s3(df, s3_key):
     buffer = io.BytesIO()
     df.to_parquet(buffer, index=False)
     s3.put_object(Bucket=BUCKET_NAME, Key=s3_key, Body=buffer.getvalue())
-    print(f"✅ Uploaded {len(df)} rows → s3://{BUCKET_NAME}/{s3_key}")
+    print(f" Uploaded {len(df)} rows → s3://{BUCKET_NAME}/{s3_key}")
 
 
 def read_csv_chunked(filepath, chunksize=10000):
@@ -75,12 +75,12 @@ def extract_products():
 
 
 def run_extraction():
-    print("🚀 Starting extraction...")
+    print(" Starting extraction...")
     print(f"  Orders    : {extract_orders()} rows")
     print(f"  Customers : {extract_customers()} rows")
     print(f"  Payments  : {extract_payments()} rows")
     print(f"  Products  : {extract_products()} rows")
-    print("✅ Extraction complete!")
+    print(" Extraction complete!")
 
 
 if __name__ == '__main__':
